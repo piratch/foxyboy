@@ -25,10 +25,12 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
         ButterKnife.bind(this);
+        initInstance();
+    }
+
+    private void initInstance() {
         loadImage();
         startThread();
-
-
     }
 
     private void loadImage() {
@@ -41,6 +43,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private void goToMainActivity(){
         startActivity(new Intent(SplashScreenActivity.this,LandingPageActivity.class));
+        SplashScreenActivity.this.overridePendingTransition(0, 0);
         finish();
     }
 
