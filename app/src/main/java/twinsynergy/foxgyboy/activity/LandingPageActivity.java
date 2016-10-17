@@ -4,7 +4,9 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +27,10 @@ public class LandingPageActivity extends AppCompatActivity {
     @BindView(R.id.imv_bg_landing_page) ImageView imvBgLandingPage;
     @BindView(R.id.imv_logo_landing_page) ImageView imvLogoLandingPage;
     @BindView(R.id.imv_character_cat_landing_page) ImageView imvCharacterCatLandingPage;
+    Handler handler = new Handler();
+    Runnable runnable;
+    long delay_time;
+    long time = 2000L;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +54,8 @@ public class LandingPageActivity extends AppCompatActivity {
         setViewAnimationFadeIn(imvCould3LandingPage);
         setViewAnimationFadeIn(imvLogoLandingPage);
         setViewAnimationTransition(imvCharacterCatLandingPage);
+        startThread();
+
     }
 
     private void loadImage(int drawablePicture , ImageView imageView) {
@@ -81,5 +89,34 @@ public class LandingPageActivity extends AppCompatActivity {
         animSet.playTogether(animX, animY);
         animSet.setDuration(1000);
         animSet.start();
+    }
+
+    private void goToMainPage(){
+        startActivity(new Intent(LandingPageActivity.this,MainActivity.class));
+        LandingPageActivity.this.overridePendingTransition(0, 0);
+        finish();
+    }
+
+    private void startThread(){
+        runnable = new Runnable() {
+            public void run() {
+                goToMainPage();
+            }
+        };
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        delay_time = time;
+        handler.postDelayed(runnable, delay_time);
+        time = System.currentTimeMillis();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        handler.removeCallbacks(runnable);
+        time = delay_time - (System.currentTimeMillis() - time);
     }
 }
