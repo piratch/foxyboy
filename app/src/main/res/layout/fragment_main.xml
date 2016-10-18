@@ -3,30 +3,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="400dp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/character_outline">
-
-    </ImageView>
-
-    <ImageView
-        android:layout_width="220dp"
-        android:layout_height="80dp"
-        android:background="@drawable/character4"
-        android:layout_marginTop="147dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
     <TextView
-        android:layout_width="100dp"
-        android:layout_height="40dp"
+        android:layout_width="70dp"
+        android:layout_height="34dp"
         android:background="@drawable/score"
         android:layout_marginRight="39dp"
         android:layout_marginEnd="39dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:id="@+id/textView" />
+
+    <Button
+        android:layout_width="114dp"
+        android:layout_height="34dp"
+        android:background="@drawable/btn_invite_selector"
+        android:layout_marginTop="195dp"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:layout_width="192dp"
+        android:layout_height="100dp"
+        android:background="@drawable/character4"
+        android:id="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="105dp"/>
+
+    <ImageView
+        android:background="@drawable/outline_bg"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_above="@+id/recycler_view_list_friend"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_list_friend"
+        android:layout_width="400dp"
+        android:layout_height="310dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="423dp"
+        android:background="@drawable/character_outline"
+        android:layout_alignParentBottom="true">
+    </ImageView>
 
 </RelativeLayout>

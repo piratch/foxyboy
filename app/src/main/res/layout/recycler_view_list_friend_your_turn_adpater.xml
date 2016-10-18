@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/btn_your_turn_selector"
+    android:layout_width="match_parent"
+    android:layout_height="95dp">
+    <ImageView
+        android:id="@+id/imv_who_turn_text"
+        android:background="@drawable/you_turn_text"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="64dp"
+        android:layout_height="12.5dp" />
+    <ImageView
+        android:id="@+id/imv_profile"
+        android:layout_below="@id/imv_who_turn_text"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/pic"/>
+    <TextView
+        android:id="@+id/tv_name"
+        android:textColor="#6e1d00"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/imv_who_turn_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imv_profile" />
+    <TextView
+        android:id="@+id/tv_time"
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imv_profile" />
+</RelativeLayout>

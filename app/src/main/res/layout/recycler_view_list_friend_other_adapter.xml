@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/btn_other_friend_selector"
+    android:layout_width="match_parent"
+    android:layout_height="95dp">
+    <TextView
+        android:id="@+id/their_turn_text"
+        android:background="@drawable/other_friend_text"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="104dp"
+        android:layout_height="12.5dp" />
+    <ImageView
+        android:id="@+id/imv_profile"
+        android:layout_below="@id/their_turn_text"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/pic"/>
+    <TextView
+        android:id="@+id/tv_name"
+        android:textColor="#6e1d00"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/their_turn_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/imv_profile" />
+    <View
+        android:layout_alignParentBottom="true"
+        android:background="#f39b1c1c"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+</RelativeLayout>

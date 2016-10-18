@@ -3,6 +3,7 @@ package twinsynergy.foxgyboy.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,11 +47,7 @@ public class LoginFragment extends Fragment {
 
     @OnClick(R.id.btn_facebook_login)
     public void onClickBtnLogin(){
-        Toast.makeText(getContext(),"clock",Toast.LENGTH_SHORT).show();
         MainBus.getInstance().getBus()
                 .post(new EventFragment(MainFragment.newInstance()));
-
-
     }
-
 }
